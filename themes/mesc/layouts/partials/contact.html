@@ -1,0 +1,148 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.contact.contact.enable }}
+{{ with $data.contact.contact }}
+{{"<!-- Start Contact Us -->" | safeHTML}}
+<section id="contact" class="contact-us section-bg">
+	<div class="container pb-5 ">
+		<div class="row">
+			<div class="col-lg-12 d-flex flex-column align-items-center">
+				{{"<!-- section title -->" | safeHTML}}
+				<div class="title text-center wow fadeIn" data-wow-duration="500ms" style="margin-bottom: 30px;">
+					<h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span style="color: coral">
+							{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+					<div class="border-meghna"></div>
+				</div>
+
+			</div>
+			{{"<!-- /section title -->" | safeHTML}}
+
+			{{"<!-- Contact Details -->" | safeHTML}}
+			<div class="contact-info col-lg-6 wow fadeInUp" data-wow-duration="500ms" style="margin-top: 20px;">
+				<h3>{{ .subtitle | markdownify }}</h3>
+				<p> {{ .content | markdownify }} </p>
+
+				{{ if .contact_form.enable }}
+				<div class="contact-details">
+					{{ range .contact_list }}
+					<div class="con-info clearfix">
+						<i class="{{ .icon }}"></i>
+						<span>{{ .info }}</span>
+					</div>
+					{{ end }}
+				</div>
+				{{ end }}
+			</div>
+
+			{{"<!-- Contact Form -->" | safeHTML}}
+			{{ if .contact_form.enable }}
+			{{ with .contact_form }}
+			<div class="col-lg-6 wow fadeInUp rounded p-3" data-wow-duration="500ms" data-wow-delay="300ms" style="background-color:#808080; margin-top: 20px; padding: 10px; ">
+				<form
+          id="contact-form"
+          class="form"
+          style="text-align: center;"
+          method="post"
+          action="#"
+          role="form"
+        >
+          <div class="mb-2">
+            <div class="d-inline-block ml-2 mb-1">
+              <input
+                type="text"
+                placeholder="First Name"
+                class="form-control"
+                name="first name"
+                id="fname"
+              />
+            </div>
+            <div class="d-inline-block ml-2">
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="form-control"
+                name="last name"
+                id="lname"
+              />
+            </div>
+          </div>
+          <div class="mb-2">
+            <div class="d-inline-block ml-2 mb-1">
+              <input
+                type="text"
+                placeholder="Company Name"
+                class="form-control"
+                name="company"
+                id="company"
+              />
+            </div>
+            <div class="d-inline-block ml-2">
+              <input
+                type="Phone"
+                placeholder="Phone No."
+                class="form-control"
+                name="phone"
+                id="phone"
+              />
+            </div>
+          </div>
+          <div class="mb-2">
+            <div class="d-inline-block ml-2 mb-1">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="form-control"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div class="d-inline-block ml-2">
+              <input
+                type="text"
+                placeholder="Subject"
+                class="form-control"
+                name="subject"
+                id="subject"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+              <textarea
+                placeholder="Message"
+                class="form-control w-75 mx-auto"
+                name="message"
+                id="message"
+              ></textarea>
+          </div>
+
+          <div id="cf-submit">
+            <button
+              type="submit"
+              id="contact-submit"
+              class="btn btn-transparent btn-block w-50 mx-auto"
+              style="background-color: coral; color: #fff;"
+              value="Submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+			</div>
+			{{ end }}
+			{{ else }}
+			<div class="contact-details">
+				{{ range .contact_list }}
+				<div class="con-info clearfix">
+					<i class="{{ .icon }}"></i>
+					<span>{{ .info }}</span>
+				</div>
+				{{ end }}
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>
+{{"<!-- /contact -->" | safeHTML}}
+{{ end }}
+{{ end }}

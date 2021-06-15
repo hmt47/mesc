@@ -1,0 +1,48 @@
+<head>
+	<meta charset="utf-8">
+	<title>{{ .Title }}</title>
+
+	{{ "<!-- mobile responsive meta -->" | safeHTML }}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+	{{ with site.Params.author }}
+	<meta name="author" content="{{ . }}">{{ end }}
+	{{ hugo.Generator }}
+
+	{{ "<!-- plugins -->" | safeHTML }}
+	{{ range site.Params.plugins.css }}
+	<link rel="stylesheet" href="{{ .link | absURL }}">
+	{{ end }}
+
+	{{"<!-- Main Stylesheet -->"|safeHTML}}
+	{{ $styles := resources.Get "css/style.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+	{{ $styles1 := resources.Get "css/style1.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles1.Permalink }}" media="screen">
+
+	{{ $styles2 := resources.Get "css/demo.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles2.Permalink }}" media="screen">
+
+	{{"<!-- Custom stylesheet - for your changes -->" |safeHTML}}
+	{{ $custom := resources.Get "css/custom.css" | minify }}
+  <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
+
+	{{ "<!--Favicon-->" | safeHTML }}
+	<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+	<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+	<script type="text/javascript" src="/js/modernizr.custom.86080.js"></script>
+	{{ with site.Params.google_analytics_id }}
+	{{ "<!-- Global Site Tag (gtag.js) - Google Analytics -->" | safeHTML }}
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', '{{ . }}');
+	</script>
+	{{ end }}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>

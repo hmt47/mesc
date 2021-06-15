@@ -1,0 +1,449 @@
+<style>
+        :root {
+        --black: rgba(0, 0, 0, 1);
+        --venice-blue: rgba(6, 81, 141, 1);
+        --coral: rgba(255, 127, 80, 1);
+        --white: rgba(255, 255, 255, 1);
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        --font-size-xs: 12px;
+        --font-size-s: 14px;
+        --font-size-m: 18px;
+        --font-size-l: 36px;
+        --font-size-xl: 48px;
+      }
+      .roboto-medium-black-48px {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-xl);
+        font-weight: 500;
+        font-style: normal;
+      }
+      .roboto-light-black-14px {
+        color: var(--black);
+        font-family: var(--font-family);
+        font-size: var(--font-size-s);
+        font-weight: 300;
+        font-style: normal;
+      }
+      .roboto-medium-white-18px {
+        color: var(--white);
+        font-family: var(--font-family);
+        font-size: var(--font-size-m);
+        font-weight: 500;
+        font-style: normal;
+      }
+      .roboto-medium-venice-blue-12px {
+        color: var(--venice-blue);
+        font-family: var(--font-family);
+        font-size: var(--font-size-xs);
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    
+      .mainc {
+        overflow-x: hidden;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 20px 40px 20px;
+      }
+      .box {
+        background-color: #364546;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 31px;
+      }
+      .heading span * {
+        font-size: 36px;
+        font-weight: 800;
+      }
+      .heading span span:first-child {
+        color: var(--white);
+      }
+      .heading span span:last-child {
+        color: var(--coral);
+      }
+      .sep {
+        margin-top: 16px;
+        align-items: flex-start;
+        display: flex;
+        justify-content: flex-end;
+        min-width: 308px;
+      }
+      .line-1 {
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 2px;
+        width: 308px;
+        border-top: 1px solid rgba(124, 124, 124, 0.65);
+      }
+      .overlap-group {
+        height: 5px;
+        position: relative;
+        width: 308px;
+      }
+      .rectangle-2 {
+        background-color: #57cbcc;
+        height: 5px;
+        left: 129px;
+
+        position: absolute;
+        top: 0;
+        width: 50px;
+      }
+      .roboto-medium-white-18px {
+        color: var(--white);
+        font-weight: 500;
+        font-style: normal;
+        font-size: 18px;
+      }
+      @media screen and (max-width: 600px) {
+        .service-group {
+          margin-top: 32px !important;
+          flex-direction: column !important;
+        }
+        .flex-col {
+          margin-top: 15px;
+          margin-left: 0px !important;
+        }
+        .polygon {
+          height: 70px !important;
+        }
+      }
+      .service-group {
+        margin-top: 64px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .accounting-setup {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 153px;
+      }
+      .financing-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 148px;
+      }
+      .flex-col {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin-left: 133px;
+        min-height: 165px;
+        width: max-content;
+      }
+      .flex-col-1 {
+        align-items: flex-start;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        min-height: 201px;
+        width: max-content;
+      }
+      .group- {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 225px;
+      }
+      .group-12 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 194px;
+      }
+      .group-13 {
+        align-items: center;
+        display: flex;
+        min-width: 249px;
+      }
+      .group-2 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 116px;
+      }
+      .group-3 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 163px;
+      }
+      .group-4 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 153px;
+      }
+      .group-5 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 168px;
+      }
+      .group-7 {
+        align-items: center;
+        display: flex;
+        min-width: 304px;
+      }
+      .group-8 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 139px;
+      }
+      .group-9 {
+        align-items: center;
+        display: flex;
+        margin-top: 15px;
+        min-width: 236px;
+      }
+      .mic-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 101px;
+      }
+      .payroll-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 124px;
+      }
+      .rectangle-3 {
+        background-color: var(--coral);
+        height: 10px;
+        margin-bottom: 3px;
+
+        width: 8px;
+      }
+      .taxation-service {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 138px;
+      }
+      .text- {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 210px;
+      }
+      .text-1 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 179px;
+      }
+      .text-2 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 234px;
+      }
+      .text-3 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 289px;
+      }
+      .text-4 {
+        height: 21px;
+        letter-spacing: 0.18px;
+        margin-left: 7px;
+        min-height: 21px;
+        min-width: 221px;
+      }
+      .polygon {
+        overflow: hidden;
+        margin-top: -2px;
+        width: auto;
+        min-height: 70px;
+        max-height: 140px;
+      }
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline !important;
+      }
+    </style>
+
+
+
+
+
+<div class="mainc">
+        <div class="box">
+          <div class="heading">
+            <span>
+              <span>Our </span>
+              <span>Services</span>
+            </span>
+          </div>
+          <div class="sep">
+            <div class="overlap-group">
+              <div class="line-1"></div>
+              <div class="rectangle-2"></div>
+            </div>
+          </div>
+          <div class="service-group">
+            <div class="flex-col-1">
+              <div class="group-13">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-2 valign-text-middle roboto-medium-white-18px"
+                >
+                  Company Formation Service
+                </a>
+              </div>
+              <div class="group-2">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="mic-service valign-text-middle roboto-medium-white-18px"
+                >
+                  MIC Service
+                </a>
+              </div>
+              <div class="group-3">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    financing-service
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Financing Service
+                </a>
+              </div>
+              <div class="group-4">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    taxation-service
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Taxation Service
+                </a>
+              </div>
+              <div class="group-5">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    accounting-setup
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Accounting&nbsp;&nbsp;Setup
+                </a>
+              </div>
+              <div class="group-">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text- valign-text-middle roboto-medium-white-18px"
+                >
+                  Investment Deal Services
+                </a>
+              </div>
+            </div>
+            <div class="flex-col">
+              <div class="group-7">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-3 valign-text-middle roboto-medium-white-18px"
+                >
+                  Accounting &amp; Bookkeeping Service
+                </a>
+              </div>
+              <div class="group-8">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="
+                    payroll-service
+                    valign-text-middle
+                    roboto-medium-white-18px
+                  "
+                >
+                  Payroll Service
+                </a>
+              </div>
+              <div class="group-9">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-4 valign-text-middle roboto-medium-white-18px"
+                >
+                  Business Proposal Service
+                </a>
+              </div>
+              <div class="group-">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text- valign-text-middle roboto-medium-white-18px"
+                >
+                  Corporate Training Service
+                </a>
+              </div>
+              <div class="group-12">
+                <div class="rectangle-3"></div>
+                <a
+                  href="#"
+                  class="text-1 valign-text-middle roboto-medium-white-18px"
+                >
+                  Internal Audit Service
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="polygon"
+          src="data:image/svg+xml;base64,PHN2ZwogICAgICAgIGNsYXNzPSJwb2x5Z29uIgogICAgICAgIHZpZXdCb3g9IjAgMCAxNDQwIDcwIgogICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICA+CiAgICAgICAgPHBhdGggZD0iTTcxOC41NDYgNzBMMTUwMSAwLjI1SC02My45MDhMNzE4LjU0NiA3MFoiIGZpbGw9IiMzNjQ1NDYiIC8+CiAgICAgIDwvc3ZnPg=="
+        />
+      </div>

@@ -1,0 +1,36 @@
+############################# feature ###################################
+feature:
+  enable : true
+  image : images/about/Finance-1.jpg
+  image_webp : images/about/Finance-1.webp
+  title : Why MES
+  content : "Myanmar Enterprise Solutions is about bringing our clients a positive outsourcing experience for their
+accounting and corporate financial planning needs. We were registered as a non-audit firm with the
+registration no NCC 002 since 2016 which is the second firm approved by MAC. (Myanmar Accountancy
+Council). We offer the most flexible professional accounting and financial solutions tailored specifically to
+your individual requirements by providing a range of services."
+  feature_item : 
+      # feature item loop
+    - title : 
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content :  It means you are in safe hands as all our accountants and financial consultants are qualified.
+
+      
+      # feature item loop
+    - title : 
+      icon : ti-panel # themify icon pack : https://themify.me/themify-icons
+      content : It means professional as we are governed by MICPA and we follow the professional and ethical guideline.
+      # feature item loop
+    - title : 
+      icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
+      content : It means we are different; we offer more than just business and financial consulting – we make it a point to truly understand our clients’ businesses requirements to provide quality services and bespoke solutions that optimize people, processes, and profit.
+
+      
+      # feature item loop
+    - title : 
+      icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
+      content : It means we are proactive and accountable because we are a medium firm and easy to reach.
+    
+    - title : 
+      icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
+      content : We welcome you and assure you of 100% satisfaction.
